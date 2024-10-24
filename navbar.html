@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Flipkart Style Navbar</title>
+</head>
+<style>
+   body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #2874f0;
+    padding: 10px 20px;
+    color: white;
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.search-container {
+    display: flex;
+    flex-grow: 1;
+    margin: 0 20px;
+}
+
+.search-container input {
+    padding: 10px;
+    border: none;
+    border-radius: 5px 0 0 5px;
+    width: 100%;
+    font-size: 16px;
+}
+
+.search-container button {
+    padding: 10px 15px;
+    background-color: #ffcc00;
+    color: #2874f0;
+    border: none;
+    border-radius: 0 5px 5px 0;
+    cursor: pointer;
+}
+
+.nav-links {
+    list-style-type: none;
+    display: flex;
+    gap: 20px;
+}
+
+.nav-links li a {
+    color: white;
+    text-decoration: none;
+    padding: 5px 10px;
+    transition: background 0.3s;
+}
+
+.nav-links li a:hover {
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 5px;
+}
+
+.user-options a {
+    color: white;
+    text-decoration: none;
+    margin-left: 15px;
+} 
+</style>
+<body>
+    <nav class="navbar">
+        <div class="logo">Flipkart</div>
+        <div class="search-container">
+            <input type="text" placeholder="Search for products...">
+            <button type="submit">Search</button>
+        </div>
+        <ul class="nav-links">
+            <li><a href="#">Electronics</a></li>
+            <li><a href="#">Fashion</a></li>
+            <li><a href="#">Home & Furniture</a></li>
+            <li><a href="#">Books</a></li>
+            <li><a href="#">Grocery</a></li>
+            <li><a href="#">Offers</a></li>
+        </ul>
+        <div class="user-options">
+            <a href="#">Login</a>
+            <a href="#">Sign Up</a>
+        </div>
+    </nav>
+</body>
+</html>
