@@ -1,97 +1,68 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="styles.css">
-    <title>Flipkart Style Navbar</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hello, World!</title>
+  <link rel="icon" href="(link unavailable)">
+  <link rel="stylesheet" href="styles.css">
+  <link href="https://i.ytimg.com/vi/Ho3-nT-Jt7Y/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&rs=AOn4CLDP51NV7ijtMSjdGIkUUIWd-9jmpA" rel="stylesheet">
+  <style>
+    .container {
+      text-align: center;
+    }
+  </style>
 </head>
-<style>
-   body {
-    margin: 0;
-    font-family: Arial, sans-serif;
-}
-
-.navbar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background-color: #2874f0;
-    padding: 10px 20px;
-    color: white;
-}
-
-.logo {
-    font-size: 24px;
-    font-weight: bold;
-}
-
-.search-container {
-    display: flex;
-    flex-grow: 1;
-    margin: 0 20px;
-}
-
-.search-container input {
-    padding: 10px;
-    border: none;
-    border-radius: 5px 0 0 5px;
-    width: 100%;
-    font-size: 16px;
-}
-
-.search-container button {
-    padding: 10px 15px;
-    background-color: #ffcc00;
-    color: #2874f0;
-    border: none;
-    border-radius: 0 5px 5px 0;
-    cursor: pointer;
-}
-
-.nav-links {
-    list-style-type: none;
-    display: flex;
-    gap: 20px;
-}
-
-.nav-links li a {
-    color: white;
-    text-decoration: none;
-    padding: 5px 10px;
-    transition: background 0.3s;
-}
-
-.nav-links li a:hover {
-    background: rgba(255, 255, 255, 0.2);
-    border-radius: 5px;
-}
-
-.user-options a {
-    color: white;
-    text-decoration: none;
-    margin-left: 15px;
-} 
-</style>
 <body>
-    <nav class="navbar">
-        <div class="logo">Flipkart</div>
-        <div class="search-container">
-            <input type="text" placeholder="Search for products...">
-            <button type="submit">Search</button>
-        </div>
-        <ul class="nav-links">
-            <li><a href="#">Electronics</a></li>
-            <li><a href="#">Fashion</a></li>
-            <li><a href="#">Home & Furniture</a></li>
-            <li><a href="#">Books</a></li>
-            <li><a href="#">Grocery</a></li>
-            <li><a href="#">Offers</a></li>
-        </ul>
-        <div class="user-options">
-            <a href="#">Login</a>
-            <a href="#">Sign Up</a>
-        </div>
-    </nav>
+  <div class="container">
+    <h2 class="title">Login Page</h2>
+    <form class="userdata">
+      <div class="user">
+        <i class='bx bxs-user-circle'></i>
+        <input type="text" name="userdata" id="userdata" placeholder="Userdata" required />
+      </div>
+      <div class="userpassword">
+        <i class='bx bxs-lock'></i>
+        <input type="password" name="password" id="password" placeholder="Password" required />
+      </div>
+      <button type="submit" class="submit">Submit</button>
+      <div class="error" id="ErrorMessage"></div>
+      <div class="Toggle" id="ToggleForm">Don't have an account yet?</div>
+    </form>
+  </div>
+
+  <script>
+    let titleElement = document.getElementsByClassName("title")[0];
+    let toggleText = document.getElementById('ToggleForm');
+    let submitButton = document.getElementsByClassName("submit")[0];
+
+    toggleText.addEventListener('click', function() {
+      if (titleElement.innerText === "Login Page") {
+        titleElement.innerText = "Signup";
+        toggleText.innerText = "Already have an account?";
+      } else {
+        titleElement.innerText = "Login Page";
+        toggleText.innerText = "Don't have an account yet?";
+      }
+    });
+
+    submitButton.addEventListener('click', function(event) {
+      event.preventDefault();
+      let username = document.getElementById("userdata").value;
+      let userpassword = document.getElementById("password").value;
+
+      // Define valid credentials
+      let validUsername = 'admin';
+      let validPassword = 'password';
+
+      if (username === validUsername && userpassword === validPassword) {
+        alert("Valid");
+        // Open new tab
+        window.open('https://www.google.com/search?gs_ssp=eJzj4tLP1Tcwzk0ut0xRYDRgdGDw4slNzE5VyK1UKCnKLAAAexIIkg&q=make+my+trip&rlz=1C5CHFA_enIN1059IN1059&oq=&aqs=chrome.1.46i67i199i308i362i465i512i524i650l4j0i66i67i308i362i512i524i650l2j46i67i199i308i362i465i512i524i650j0i66i67i308i362i512i524i650.4521j0j9&sourceid=chrome&ie=UTF-8');
+      } else {
+        alert("Invalid");
+      }
+    });
+  </script>
 </body>
 </html>
