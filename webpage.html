@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Hello, World!</title>
+  <title>Login Page</title>
   <link rel="icon" href="https://i.ytimg.com/vi/Ho3-nT-Jt7Y/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&rs=AOn4CLDP51NV7ijtMSjdGIkUUIWd-9jmpA">
   <link rel="stylesheet" href="styles.css">
   <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
@@ -19,7 +19,7 @@
     <form class="userdata">
       <div class="user">
         <i class='bx bxs-user-circle'></i>
-        <input type="text" name="userdata" id="userdata" placeholder="Userdata" required />
+        <input type="text" name="userdata" id="userdata" placeholder="Username" required />
       </div>
       <div class="userpassword">
         <i class='bx bxs-lock'></i>
@@ -29,40 +29,38 @@
       <div class="error" id="ErrorMessage"></div>
       <div class="Toggle" id="ToggleForm">Don't have an account yet?</div>
     </form>
+    <script>
+      let titleElement = document.getElementsByClassName("title")[0];
+      let toggleText = document.getElementById('ToggleForm');
+      let submitButton = document.getElementsByClassName("submit")[0];
+
+      toggleText.addEventListener('click', function() {
+        if (titleElement.innerText === "Login Page") {
+          titleElement.innerText = "Signup";
+          toggleText.innerText = "Already have an account?";
+        } else {
+          titleElement.innerText = "Login Page";
+          toggleText.innerText = "Don't have an account yet?";
+        }
+      });
+
+      submitButton.addEventListener('click', function(event) {
+        event.preventDefault();
+        let username = document.getElementById("userdata").value;
+        let userpassword = document.getElementById("password").value;
+
+        // Define valid credentials
+        let validUsername = "admin";
+        let validPassword = "password";
+
+        if (username === validUsername && userpassword === validPassword) {
+          alert("Valid");
+        } else {
+          alert("Invalid");
+          document.getElementById("ErrorMessage").innerText = "Invalid username or password";
+        }
+      });
+    </script>
   </div>
-
-  <script>
-    let titleElement = document.getElementsByClassName("title")[0];
-    let toggleText = document.getElementById('ToggleForm');
-    let submitButton = document.getElementsByClassName("submit")[0];
-
-    toggleText.addEventListener('click', function() {
-      if (titleElement.innerText === "Login Page") {
-        titleElement.innerText = "Signup";
-        toggleText.innerText = "Already have an account?";
-      } else {
-        titleElement.innerText = "Login Page";
-        toggleText.innerText = "Don't have an account yet?";
-      }
-    });
-
-    submitButton.addEventListener('click', function(event) {
-      event.preventDefault();
-      let username = document.getElementById("userdata").value;
-      let userpassword = document.getElementById("password").value;
-
-      // Define valid credentials
-      let validUsername = 'admin';
-      let validPassword = 'password';
-
-      if (username === validUsername && userpassword === validPassword) {
-        alert("Valid");
-        window.open("(https://www.myntra.com/)","_blank");
-        window.location.href = "webpage.html";
-      } else {
-        alert("Invalid");
-      }
-    });
-  </script>
 </body>
 </html>
