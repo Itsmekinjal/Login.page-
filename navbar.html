@@ -4,75 +4,169 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles.css">
-    <title>Flipkart Style Navbar</title>
+    <title>Flipkart Style Navbar with Image Carousel</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f5f5f5;
+        }
+        
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #0f6caa;
+            padding: 10px 20px;
+            color: white;
+        }
+        
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+            color: #f1c40f;
+        }
+        
+        .search-container {
+            display: flex;
+            flex-grow: 1;
+            margin: 0 20px;
+        }
+        
+        .search-container input {
+            padding: 10px;
+            border: none;
+            border-radius: 5px 0 0 5px;
+            width: 100%;
+            font-size: 16px;
+        }
+        
+        .search-container button {
+            padding: 10px 15px;
+            background-color: #e74c3c;
+            color: white;
+            border: none;
+            border-radius: 0 5px 5px 0;
+            cursor: pointer;
+        }
+        
+        .nav-links {
+            list-style-type: none;
+            display: flex;
+            gap: 20px;
+        }
+        
+        .nav-links li a {
+            color: white;
+            text-decoration: none;
+            padding: 5px 10px;
+            transition: background 0.3s;
+        }
+        
+        .nav-links li a:hover {
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 5px;
+        }
+        
+        .user-options a {
+            color: white;
+            text-decoration: none;
+            margin-left: 15px;
+        }
+        
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            display: flex;
+            justify-content: space-between;
+            gap: 10px;
+            margin-top: 20px;
+        }
+        
+        .image_item {
+            position: relative;
+            width: 100%;
+            max-width: 600px;
+            height: 450px;
+            background-color: #ccc;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        
+        .img1 {
+            position: absolute;
+            width: 100%;
+            opacity: 0;
+            transition: opacity 2s ease-in-out;
+        }
+        
+        .img1 img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+        
+        p {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            margin: 0;
+            padding: 5px 10px;
+            color: white;
+            background-color: rgba(0, 0, 0, 0.5);
+            font-size: 1rem;
+            border-radius: 5px;
+        }
+        
+        /* Animation for smooth transitions with 20s visibility */
+        @keyframes blinkImages1 {
+            0%, 30% {
+                opacity: 0.8;
+            }
+            33%, 100% {
+                opacity: 0;
+            }
+        }
+        
+        @keyframes blinkImages2 {
+            0%, 33% {
+                opacity: 0;
+            }
+            36%, 63% {
+                opacity: 0.6;
+            }
+            66%, 100% {
+                opacity: 0;
+            }
+        }
+        
+        @keyframes blinkImages3 {
+            0%, 66% {
+                opacity: 0;
+            }
+            69%, 96% {
+                opacity: 0.4;
+            }
+            100% {
+                opacity: 0;
+            }
+        }
+        
+        /* Apply animation to the images */
+        .img1:nth-child(1) {
+            animation: blinkImages1 5s infinite;
+        }
+        
+        .img1:nth-child(2) {
+            animation: blinkImages2 5s infinite;
+        }
+        
+        .img1:nth-child(3) {
+            animation: blinkImages3 5s infinite;
+        }
+    </style>
 </head>
-<style>
-   body {
-    margin: 0;
-    font-family: Arial, sans-serif;
-}
 
-.navbar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background-color: #2874f0;
-    padding: 10px 20px;
-    color: white;
-}
-
-.logo {
-    font-size: 24px;
-    font-weight: bold;
-}
-
-.search-container {
-    display: flex;
-    flex-grow: 1;
-    margin: 0 20px;
-}
-
-.search-container input {
-    padding: 10px;
-    border: none;
-    border-radius: 5px 0 0 5px;
-    width: 100%;
-    font-size: 16px;
-}
-
-.search-container button {
-    padding: 10px 15px;
-    background-color: #ffcc00;
-    color: #2874f0;
-    border: none;
-    border-radius: 0 5px 5px 0;
-    cursor: pointer;
-}
-
-.nav-links {
-    list-style-type: none;
-    display: flex;
-    gap: 20px;
-}
-
-.nav-links li a {
-    color: white;
-    text-decoration: none;
-    padding: 5px 10px;
-    transition: background 0.3s;
-}
-
-.nav-links li a:hover {
-    background: rgba(255, 255, 255, 0.2);
-    border-radius: 5px;
-}
-
-.user-options a {
-    color: white;
-    text-decoration: none;
-    margin-left: 15px;
-} 
-</style>
 <body>
     <nav class="navbar">
         <div class="logo">Flipkart</div>
@@ -93,5 +187,24 @@
             <a href="#">Sign Up</a>
         </div>
     </nav>
+
+    <div class="container">
+        <div class="image_item">
+            <div class="img1">
+                <img src="./assets/Ferrari_F1.jpeg" alt="Ferrari F1" class="img1">
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ratione dolore at iusto!</p>
+            </div>
+            <div class="img1">
+                <img src="./assets/Mercedes_F1.jpeg" alt="Mercedes F1" class="img1">
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ratione dolore at iusto!</p>
+            </div>
+            <div class="img1">
+                <img src="./assets/Red_Bull_F1.jpeg" alt="Red Bull F1" class="img1">
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ratione dolore at iusto!</p>
+            </div>
+        </div>
+    </div>
+
 </body>
+
 </html>
