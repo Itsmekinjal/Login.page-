@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ShoeHub</title>
+  <link rel="stylesheet" href="STEPBYKINJAL.css">
+  <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+</head>
+<style>
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+}
+
+/* Navbar styles */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background-color: #007bff;
+    color: white;
+}
+
+.navbar .logo {
+    font-size: 24px;
+}
+
+.navbar .search-container {
+    display: flex;
+    align-items: center;
+}
+
+.navbar input[type="text"] {
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+}
+
+.search-icon {
+    background-color: white;
+    border-radius: 5px;
+    margin-left: -5px;
+    padding: 10px;
+}
+
+.menu {
+    display: flex;
+    gap: 20px;
+}
+
+.menu a {
+    color: white;
+    text-decoration: none;
+}
+
+.login-area {
+    display: flex;
+    align-items: center;
+}
+
+.user-icon {
+    margin-right: 10px;
+}
+
+/* Carousel styles */
+.carousel {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 20px 0;
+}
+
+.carousel-item {
+    position: relative;
+    width: 100%;
+    height: 300px;
+    overflow: hidden;
+}
+
+.carousel-item img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+}
+
+/* Products Section */
+.products {
+    padding: 20px;
+}
+
+.product-list {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.product {
+    background-color: #fff;
+    border-radius: 10px;
+    padding: 15px;
+    text-align: center;
+    width: 200px;
+    margin: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.product img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
+.buttons {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+button {
+    border: none;
+    border-radius: 5px;
+    padding: 10px;
+    cursor: pointer;
+}
+
+button.add {
+    background-color: #28a745;
+    color: white;
+</style>
+<body>
+  <nav class="navbar">
+    <h2 class="logo">ShoeHub</h2>
+    <div class="search-container">
+      <input type="text" placeholder="Search Shoes...">
+      <div class="search-icon">
+        <i class='bx bx-search-alt-2'></i>
+      </div>
+    </div>
+    <div class="menu">
+      <a href="#">Home</a>
+      <a href="#">Services</a>
+      <a href="#">About</a>
+      <a href="#">Contact</a>
+    </div>
+    <div class="login-area">
+      <div class="user-icon">
+        <i class='bx bxs-user'></i>
+      </div>
+      <a href="#">Login</a>
+    </div>
+  </nav>
+
+  <!-- Image Carousel -->
+  <section class="carousel">
+    <div class="carousel-item">
+      <img src="https://media.vogue.in/wp-content/uploads/2021/10/Air-Jordans-2.jpg" alt="Shoe Image 1">
+    </div>
+    <div class="carousel-item">
+      <img src="https://media.vogue.in/wp-content/uploads/2020/01/Sneakers.jpg" alt="Shoe Image 2">
+      <p class="caption">Stylish Running Shoes for All.</p>
+    </div>
+    <div class="carousel-item">
+      <img src="https://media.vogue.in/wp-content/uploads/2021/02/Nike-shoes1.jpg" alt="Shoe Image 3">
+      <p class="caption">Comfortable Casual Sneakers.</p>
+    </div>
+  </section>
+
+  <section class="products">
+    <h2>My Shoe Collection</h2>
+    <div class="product-list">
+      <div class="product">
+        <img src="https://static.nike.com/a/images/c_limit,w_592,f_auto/t_product_v1/489b06f3-42b4-45a2-aa75-4cfb16ac2e71/NIKE+COURT+VISION+LO+NN.png" alt="Sneaker">
+        <h3>Classic White Sneakers</h3>
+        <span>₹2999</span>
+        <div class="buttons">
+          <button class="bookmark"><i class='bx bxs-bookmark'></i></button>
+          <button class="add">Add to Cart</button>
+        </div>
+      </div>
+      <div class="product">
+        <img src="https://rukminim2.flixcart.com/image/850/1000/xif0q/shoe/i/j/j/10-ig3320-10-adidas-ivory-cblack-solred-original-imahfpx575yhymq7.jpeg?q=90&crop=false" alt="Running Shoe">
+        <h3>High-Performance Running Shoes</h3>
+        <span>₹4999</span>
+        <div class="buttons">
+          <button class="bookmark"><i class='bx bxs-bookmark'></i></button>
+          <button class="add">Add to Cart</button>
+        </div>
+      </div>
+      <div class="product">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT5teGYlc33Gg36LOd4aL5lbo-sJndfJHddfA&s" alt="Boot">
+        <h3>Stylish Ankle Boots</h3>
+        <span>₹3999</span>
+        <div class="buttons">
+          <button class="bookmark"><i class='bx bxs-bookmark'></i></button>
+          <button class="add">Add to Cart</button>
+        </div>
+      </div>
+      <div class="product">
+        <img src="https://static.nike.com/a/images/t_PDP_936_v1/f_auto,q_auto:eco/2bacfb05-ddc3-4341-9215-5d0f26d6e573/NIKE+CALM+SANDAL.png" alt="Sandals">
+        <h3>Comfortable Summer Sandals</h3>
+        <span>₹1999</span>
+        <div class="buttons">
+          <button class="bookmark"><i class='bx bxs-bookmark'></i></button>
+          <button class="add">Add to Cart</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="container3">
+    <div class="more_details">
+      <div class="offers">
+        <h2>OFFERS</h2>
+        <div class="commonimgs">
+          <img class="commonimg" src="https://d1csarkz8obe9u.cloudfront.net/posterpreviews/shoe-sale-instagram-design-template-b127a8ae3ffeb1e0abba6ac5c41bd567_screen.jpg?ts=1615386905" alt="offer1">
+          <img class="commonimg" src="https://d1csarkz8obe9u.cloudfront.net/posterpreviews/new-shoes-collection-sale-poster-design-template-6d5c4a8cd62d655ea88416be95951744_screen.jpg?ts=1649517884" alt="offer2">
+          <img class="commonimg" src="https://img.freepik.com/premium-psd/classic-men-s-boots-retro-sale-social-media-post-square-banner-template-design_678161-329.jpg" alt="offer3">
+          <img class="commonimg" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTD-Tlg6vilZ4V5auHqNxJKbf2Pk-dd49UHwg&s" alt="offer4">
+           </div>
+      </div>
+      <div class="shoes">
+        <h2>Featured Shoes</h2>
+        <div class="commonimgs">
+          <img class="commonimg" src="https://i.ebayimg.com/images/g/6QUAAOSwJVplcTGT/s-l400.jpg" alt="featured1">
+          <img class="commonimg" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTARlV4YwSDWqQug1XPLTdGbq4WdLCM6nEB6dErS0ciYkzdCiqKoq5TVl4sIxeVaPuEdag&usqp=CAU" alt="featured2">
+          <img class="commonimg" src="https://i.pinimg.com/736x/1e/0e/bf/1e0ebf7124f1efe47ff9c70af7d292c6.jpg" alt="featured3">
+          <img class="commonimg" src="https://images-cdn.ubuy.co.in/65af5a35753ad734e7526c58-nike-women-39-s-victory-compression.jpg" alt="featured4">
+        </div>
+      </div>
+      <div class="accessories">
+        <h2>Shoe Accessories</h2>
+        <div class="commonimgs">
+          <img class="commonimg" src="https://static.nbastore.in/resized/510X765/347/nike-everyday-crew-basketball-socks-white-white-65f82dbe51d56.jpg" alt="accessory1">
+          <img class="commonimg" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTX-tYzY-48AKrunQFALQnc-qZQFPv7NME8iA&s" alt="accessory2">
+          <img class="commonimg" src="https://images.puma.net/images/052911/67/fnd/IND/w/800/h/800/" alt="accessory3">
+          <img class="commonimg" src="https://img4.dhresource.com/webp/m/0x0/f3/albu/jc/j/20/5493fe21-27a7-4d58-b141-9ae17e2ec5e0.jpg" alt="accessory4">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="about">
+    <h2>ShoeHub - Your Online Shoe Store</h2>
+    <p>Welcome to STEPBYKINJAL, your one-stop destination for all types of shoes. Whether you're looking for running shoes, casual sneakers, or stylish boots, we have it all!</p>
+    <p>Our collection is curated to provide you with the best options in comfort, style, and durability. Shop with us and step up your shoe game!</p>
+    <p>Enjoy exclusive offers and discounts on your favorite brands. Join our community of shoe lovers today!</p>
+  </section>
+</body>
+</html>
