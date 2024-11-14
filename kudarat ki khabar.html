@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Weather App using HTML CSS and Javascript | Codehal</title>
+
+<link rel="stylesheet" href="style.css">
+
+<link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css'
+rel='stylesheet'>
+</head>
+<style>
+@import url("https://fonts.googleapis.com/css?family=Poppins:wght@300;400;500;600; 700;800;900&display=swap");
+* {
+
+margin: 0;
+
+padding: 0;
+
+box-sizing: border-box;
+
+font-family: "Poppins", sans-serif;
+}
+
+
+body {
+display: flex;
+justify-content: center;
+align-items: center;
+min-height: 100vh;
+background: url( ' ' )
+background-size: cover;
+background-position: center;
+
+ }
+.container {
+position: relative;
+width: 400px;
+height: 555px;
+background:purple;
+backdrop-filter: blur(30px);
+border: 2px solid rgba(255, 255 255,.2);
+Border-radius: 16px;
+Padding:20px;
+Color: #fff;
+}
+.search-box {
+position: relative;
+width: 100%;
+height: 55px;
+background: slateblue;
+display: flex;
+Align-items: center;
+}
+.search-box i {
+position: absolute;
+left: 10px;
+font-size: 28px;
+}
+.search-box input {
+position: absolute;
+width: 100%;
+height: 100%;
+background: transparent;
+border: 2px solid rgba(255, 255, 255, 2);
+outline: none;
+border-radius: 10px;
+font-size: 22px;
+color: #fff;
+font-weight: 500;
+text-transform: uppercase;
+padding: 0 48px 0 42px;
+}
+
+.search-boxinput::placeholder {
+color: #fff;
+text-transform: capitalize;
+}
+.search-box button {
+position: absolute;
+right: 0;
+width: 40px;
+height: 100%;
+background: transparent;
+border: none;
+outline: none;
+font-size: 28px;
+color: #fff;
+padding: 0 40px 0 5px;
+Cursor: pointer;
+}
+.weather-box{
+Text-align:center;
+Margin: 40px 0;
+}
+.weather-box img {
+width :56%;
+}
+.weather-box.temperature {
+position: relative;
+font-size: 64px;
+line-height: 1;
+font-weight: 700;
+margin: 20px 0 6px -30px
+}
+.weather-box.temperature span {
+position: absolute;
+font-size: 24px;
+margin-left: 4px;
+}
+.weather-box.description {
+
+font-size: 22px;
+
+font-weight: 500;
+
+text-transform: capitalize;
+}
+.weather-details {
+
+position: absolute;
+
+bottom: 40px;
+
+left: 0;
+
+width: 100%;
+
+padding: 0 20px;
+
+display: flex;
+
+}
+.weather-details .humidity,
+
+.weather-details .wind {
+
+display: flex;
+
+align-items: center;
+
+width: 50%;
+
+}
+.weather-details .humidity {
+
+padding-left: 20px;
+
+justify-content: flex-start;
+
+}
+
+.weather-details .wind {
+
+padding-right: 20px;
+
+justify-content: flex-end;
+
+}
+.weather-details i {
+
+font-size: 56px;
+
+margin-right: 10px;
+
+}
+.weather-details span {
+
+display: inline-block;
+
+font-size: 22px;
+
+font-weight: 500;
+
+}
+
+.weather-details p {
+
+font-size: 14px;
+
+font-weight: 500;
+
+}
+  
+</style>
+<body>
+<div class="container">
+<div class="search-box">
+<i class='bx bxs-map'></i>
+<input type="text" placeholder="enter your location">
+<button class="bx bx-search"></button>
+</div>
+<div class="weather-box">
+
+<div class="box">
+
+<div class="info-weather">
+
+<div class="weather">
+
+<img src="https://cdn-icons-png.flaticon.com/512/6122/6122561.png">
+
+<p class="temperature">16<span>°C</span></p>
+
+<p class="description">Broken Clouds</p>
+</div>
+<div class="weather-details">
+
+<div class="humidity">
+
+<i class='bx bx-water'></i>
+
+<div class="text">
+
+<div class="info-humidity">
+
+</div>
+
+<span>0%</span>
+
+<p>Humidity</p>
+
+</div>
+
+</div>
+
+<div class="wind">
+
+<i class='bx bx-wind'></i>
+
+<div class="text">
+
+<div class="info-wind">
+
+<span>0Km/h</span>
+
+</div>
+
+<p>Wind Speed</p>
+
+</div>
+
+</div>
+<script src="script.js"></script>
+<script>
+const API_KEY = '64f60853740a1ee3ba20d0fb595c97d5';
+let units = "metric";
+
+
+document.querySelector(".weather__search").addEventListener('submit', event => {
+    event.preventDefault();
+    getWeather();
+});
+
+function getWeather() {
+    const city = document.querySelector(".weather__searchform").value || "Mumbai";
+    
+    fetch(https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${API_KEY}&units=${units})
+        .then(response => response.json())
+        .then(data => {
+            document.querySelector(".weather__city").textContent = ${data.name}, ${data.sys.country};
+            document.querySelector(".weather__datetime").textContent = new Date(data.dt * 1000).toLocaleString();
+            document.querySelector(".weather__forecast").textContent = data.weather[0].main;
+            document.querySelector(".weather__temperature").innerHTML = ${data.main.temp.toFixed()}&#176;
+            document.querySelector(".weather__minmax").innerHTML = Min: ${data.main.temp_min.toFixed()}&#176 / Max: ${data.main.temp_max.toFixed()}&#176;
+            document.querySelector('.weather__realfeel').textContent = ${data.main.feels_like.toFixed()}°;
+            document.querySelector('.weather__humidity').textContent = ${data.main.humidity}%;
+            document.querySelector('.weather__wind').textContent = ${data.wind.speed} ${units === "imperial" ? "mph" : "m/s"};
+            document.querySelector('.weather__pressure').textContent = ${data.main.pressure} hPa;
+        })
+        .catch(error => console.error("Error fetching weather data:", error));
+}
+
+window.onload = getWeather;
+</body>
+
+</html>
